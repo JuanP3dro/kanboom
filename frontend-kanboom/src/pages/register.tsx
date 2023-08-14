@@ -8,6 +8,7 @@ import { RegisterData, registerSchema } from "@/schemas/user.schemas";
 import { useAuth } from "@/context/authContext";
 import { parseCookies } from "nookies";
 import RegisterForm from "@/components/register/register";
+import ModalRecoverLink from "@/components/modals/modalRecoverLink";
 
 function Register() {
   const { registerForm, modalLink } = useAuth();
@@ -22,6 +23,7 @@ function Register() {
   return (
     <main className="w-screen h-screen bg-gray-900 flex justify-center items-center">
       {registerForm && <RegisterForm/>}
+      {modalLink && <ModalRecoverLink/>}
     </main>
   );
 }
