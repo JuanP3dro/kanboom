@@ -27,7 +27,6 @@ function ModalAddCard() {
     });
     const onFormCreateCardSubmit = (formData: CreateCardData) => {  
       const newFormData = { ...formData, columnId: columnId, allowedUsers: users };
-      console.log(newFormData)
       createCard(newFormData, board.id);
     };
   return (

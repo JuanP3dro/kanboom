@@ -85,7 +85,7 @@ function Header() {
             >
               {user.profilePhoto ? (
                 <Image
-                  src={`http://localhost:3001/user/image/${user.profilePhoto}`}
+                  src={`https://kaanboom-production.up.railway.app/user/image/${user.profilePhoto}`}
                   alt="foto usuário"
                   width={30}
                   height={30}

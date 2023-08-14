@@ -18,8 +18,6 @@ function ModalForgotPassword() {
 
   const onFormEmailSubmit = (formData: iSendEmail) => {
     sendEmail(formData)
-    console.log(formData);
-    console.log(errors)
   };
 
   return (

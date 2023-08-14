@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Logo from "../../assets/logo-kanboom.png";
-import jwt, { JwtPayload } from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import { useRouter } from "next/router";
 import { useBoard } from "@/context/boardContext";
 import { useAuth } from "@/context/authContext";
 import { parseCookies } from "nookies";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 interface DecodedToken {
   id: number;
@@ -39,7 +39,6 @@ function ConfirmInvite() {
     if (typeof token == "string") {
       body.email = user.email;
       body.token = token;
-      console.log(token, body, user)
       
       getUser(idUser);
     }
@@ -55,7 +54,6 @@ function ConfirmInvite() {
               if (typeof token == "string") {
                 body.email = user.email;
                 body.token = token;
-                console.log(body)
                 acceptInvite(body);
               }
               

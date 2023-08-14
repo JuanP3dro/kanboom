@@ -16,7 +16,6 @@ function ModalEditUser() {
   } = useForm<UpdateUserData>({
     resolver: zodResolver(updateUserSchema),
   });
-  console.log(errors)
   const onFormEditUserSubmit = (formData: UpdateUserData) => {
     const newFormData = new FormData()
     newFormData.append('profilePhoto', imageUpload)
@@ -24,7 +23,6 @@ function ModalEditUser() {
     newFormData.append('email', formData.email)
     newFormData.append('password', formData.password)
     newFormData.append('confirmPassword', formData.confirmPassword)
-    console.log(formData)
     updateUser(newFormData)
   };
   return (

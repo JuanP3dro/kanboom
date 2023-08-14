@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import Image from "next/image";
 import Logo from "../../assets/logo-kanboom.png";
 import { useRouter } from "next/router";
@@ -8,14 +7,12 @@ import api from "@/services/api";
 function ValidateAccount() {
   const router = useRouter();
   const { token } = router.query;
-  console.log(token);
   
     const validateUser = async () => {
     try {
       if (token) {
         await api.patch(`/auth/email?token=${token!}`);
         toast.success("conta validada com sucesso!");
-        console.log("deu certo");
       }
       setTimeout(() => {
         router.push("/");

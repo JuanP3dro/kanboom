@@ -8,13 +8,11 @@ import ModalAddColumn from "@/components/modals/modalAddColumn";
 import ModalEditColumn from "@/components/modals/modalEditColumn";
 import ModalEditCard from "@/components/modals/modalEditCard";
 import Image from "next/image";
-import User from "../../assets/M.png";
 import ModalAddUser from "@/components/modals/modalAddUser";
 import { useBoard } from "@/context/boardContext";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
-import ModalEditUser from "@/components/modals/modalEditUser";
 import ModalAddCard from "@/components/modals/modalAddCard";
 import ModalDeleteCard from "@/components/modals/modalDeleteCard";
 import { GetColumnData } from "@/schemas/column.schemas";
@@ -112,7 +110,7 @@ function Board({ tokenJWT }: BoardProps) {
                 user.profilePhoto ? (
                   <Image
                     key={user.id}
-                    src={`http://localhost:3001/user/image/${user.profilePhoto}`}
+                    src={`https://kaanboom-production.up.railway.app/user/image/${user.profilePhoto}`}
                     alt="foto usuário"
                     width={30}
                     height={30}

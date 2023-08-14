@@ -3,7 +3,6 @@ import { Props, useAuth } from "./authContext";
 import {
   AcceptInviteData,
   CreateBoardData,
-  DeleteBoardMemberData,
   GetBoardData,
   ShareInviteData,
   UpdateBoardData,
@@ -25,7 +24,6 @@ import {
   UpdateCardData,
 } from "@/schemas/card.schemas";
 import { useRouter } from "next/router";
-import { CreateCommentData } from "@/schemas/comment.schemas";
 import { GetNotificationData } from "@/schemas/notification.schemas";
 
 interface boardProviderData {
@@ -207,7 +205,6 @@ function BoardProvider({ children }: Props) {
       await api.delete(`/cards/delete/${cardId}`);
       toast.success("Card deletado com sucesso!");
       getColumnList(boardId);
-      console.log(boardId);
       setModalDeleteCard(false);
     } catch (error) {
       console.log(error);
@@ -316,7 +313,6 @@ function BoardProvider({ children }: Props) {
 
   const acceptInvite = async (data: AcceptInviteData) => {
     try {
-      console.log(data)
       await api.post("/board/accept", data);
       toast.success("Convite aceito com sucesso");
       router.push("/dashboard");

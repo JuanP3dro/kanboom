@@ -50,7 +50,6 @@ function TaskCard({ card, column, index }: TaskCardProps) {
             className="bg-white rounded-[16px] w-full flex flex-col gap-[8px] p-[16px]"
             onDragStart={()=> {
               setCardId(card.id)
-              console.log(card.id)
             }}
             ref={provided.innerRef}
             {...provided.draggableProps}
@@ -99,7 +98,7 @@ function TaskCard({ card, column, index }: TaskCardProps) {
               </div>
             </div>
             <div className="flex items-center gap-[8px]">
-              {card.responsibleUser.profilePhoto ? <Image src={`http://localhost:3001/user/image/${card.responsibleUser.profilePhoto}`} alt="foto usuário" width={30} height={30} className="rounded-[50%] h-[30px] w-[30px]" /> : <div className="rounded-[50%] h-[30px] w-[30px] flex items-center justify-center bg-purple1">
+              {card.responsibleUser.profilePhoto ? <Image src={`https://kaanboom-production.up.railway.app/user/image/${card.responsibleUser.profilePhoto}`} alt="foto usuário" width={30} height={30} className="rounded-[50%] h-[30px] w-[30px]" /> : <div className="rounded-[50%] h-[30px] w-[30px] flex items-center justify-center bg-purple1">
                 <span className="text-white">{getResponsibleInitial(card.responsibleUser.name)}</span>
               </div>}
               <p className="text-gray3 text-[16px]">{card.responsibleUser.name}</p>

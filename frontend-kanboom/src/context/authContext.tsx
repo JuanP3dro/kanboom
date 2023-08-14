@@ -2,7 +2,6 @@ import {
   LoginData,
   RegisterData,
   UpdatePasswordData,
-  UpdateUserData,
   UserData,
   iSendEmail,
 } from "@/schemas/user.schemas";
@@ -233,7 +232,6 @@ function AuthProvider({ children }: Props) {
       await api.patch(`/user/update/${idUser}`, data)
       toast.success('Dados atualizados com sucesso!')
       getUser(idUser)
-      console.log(idUser)
       setModalEditUser(false)
     } catch (error) {
       console.log(error)

@@ -5,10 +5,8 @@ import Clipboard from "clipboard";
 import { useEffect, useRef } from "react";
 import { toast } from "react-toastify";
 import {
-  AcceptInviteData,
   AllowedUsers,
   ShareInviteData,
-  acceptInviteSchema,
   shareInviteSchema,
 } from "@/schemas/board.schemas";
 import { useAuth } from "@/context/authContext";
@@ -118,7 +116,7 @@ function ModalShareBoard({ tokenJWT, board }: ModalShareBoardProps) {
               >
                 <div className="flex items-center gap-[8px]">
                   {user.profilePhoto ? (
-                    <Image src={`kanboom-backend-production.up.railway.app/user/image/${user.profilePhoto}`} alt="foto usuário" width={30} height={30} className="rounded-[50%] h-[30px] w-[30px]" />
+                    <Image src={`https://kaanboom-production.up.railway.app/user/image/${user.profilePhoto}`} alt="foto usuário" width={30} height={30} className="rounded-[50%] h-[30px] w-[30px]" />
 
                   ) : (
                     <div className="rounded-[50%] h-[30px] w-[30px] flex items-center justify-center bg-purple1">
